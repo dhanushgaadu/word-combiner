@@ -9,12 +9,12 @@ with open('uncombined.txt','r') as o:
     print('your selected words are:\n\n'+str(m)+'\n\n')
 t=int(input('Enter minimum length of word(in +ve integers) :'))
 l=int(input('Enter maximum length of words(in +ve integers) :'))
-for i in range(t,l,1):
+for i in range(t,l+1,1):
     print(str(i)+'\n')
     combinatio=generate_word_combinations(m,i)
     for combination in combinatio:
         com=list(combination)
         k="".join(com)
-        with open('combined.txt','a') as p:
+        with open('combined.txt','w') as p:
             p.writelines(k+'\n')
 print('\n\nplease restart your code editor if my code bugs :) \n and reopen combined.txt file again\n\n')
